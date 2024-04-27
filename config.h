@@ -5,7 +5,7 @@
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -100,10 +100,10 @@ static const Key keys[] = {
   // Layouts
 
   // Media Controls
-  { 0,                            XF86XK_AudioMute,         spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle")},
-  { 0,                            XF86XK_AudioLowerVolume,  spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%")},
-  { 0,                            XF86XK_AudioRaiseVolume,  spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%")},
-  { 0,                            XF86XK_MonBrightnessDown, spawn,          SHCMD("brightnessctl set 2%-")},
+  { 0,                            XF86XK_AudioMute,         spawn,          SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle & statusbar")},
+  { 0,                            XF86XK_AudioLowerVolume,  spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5% & statusbar")},
+  { 0,                            XF86XK_AudioRaiseVolume,  spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5% & statusbar")},
+  { 0,                            XF86XK_MonBrightnessDown, spawn,          SHCMD("brightnessctl set 2%- & statusbar")},
   { 0,                            XF86XK_MonBrightnessUp,   spawn,          SHCMD("brightnessctl set +2%")},
   { 0,                            XF86XK_TouchpadToggle,    spawn,          SHCMD("touchpad-toggle")},
   { 0,                            XF86XK_Launch1,           spawn,          SHCMD("fan_control toggle")}
