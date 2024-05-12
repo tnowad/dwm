@@ -113,7 +113,7 @@ static const Key keys[] = {
   { 0,                            XF86XK_AudioLowerVolume,  spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5% & statusbar")},
   { 0,                            XF86XK_AudioRaiseVolume,  spawn,          SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5% & statusbar")},
   { 0,                            XF86XK_MonBrightnessDown, spawn,          SHCMD("brightnessctl set 2%- & statusbar")},
-  { 0,                            XF86XK_MonBrightnessUp,   spawn,          SHCMD("brightnessctl set +2%")},
+  { 0,                            XF86XK_MonBrightnessUp,   spawn,          SHCMD("brightnessctl set +2% & statusbar")},
   { 0,                            XF86XK_TouchpadToggle,    spawn,          SHCMD("touchpad-toggle")},
   { 0,                            XF86XK_Launch1,           spawn,          SHCMD("fan_control toggle")},
   { 0,                            XK_Print,                 spawn,          {.v = maimcmd } },
