@@ -61,7 +61,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmd[]  = { "st", NULL };
 static const char *roficmd[]  = { "rofi", "-show", "drun", NULL };
 static const char *maimcmd[] = { "maim", "/home/$USER/Pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png", NULL };
 static const char *maim_window_cmd[] = { "maim", "--window", NULL, "/home/$USER/Pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png", NULL };
@@ -115,7 +115,7 @@ static const Key keys[] = {
   { 0,                            XF86XK_MonBrightnessDown, spawn,          SHCMD("brightnessctl set 2%- & statusbar")},
   { 0,                            XF86XK_MonBrightnessUp,   spawn,          SHCMD("brightnessctl set +2% & statusbar")},
   { 0,                            XF86XK_TouchpadToggle,    spawn,          SHCMD("touchpad-toggle")},
-  { 0,                            XF86XK_Launch1,           spawn,          SHCMD("fan_control toggle")},
+  { 0,                            XF86XK_Launch1,           spawn,          SHCMD("fanctl toggle")},
   { 0,                            XK_Print,                 spawn,          {.v = maimcmd } },
   { MODKEY,                       XK_Print,                 spawn,          {.v = maim_window_cmd } },
   { ShiftMask,                    XK_Print,                 spawn,          {.v = maim_select_cmd } },
