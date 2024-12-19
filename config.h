@@ -64,9 +64,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *roficmd[]  = { "rofi", "-show", "drun", NULL };
 
-static const char *scrot_cmd[] = { "sh", "-c", "scrot /home/$USER/Pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png", NULL };
-static const char *scrot_window_cmd[] = { "scrot", "--focused", "/home/$USER/Pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png", NULL };
-static const char *scrot_select_cmd[] = { "scrot", "--select", "/home/$USER/Pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png", NULL };
+static const char *scrot_cmd[] = { "sh", "-c", "scrot /home/$USER/pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png", NULL };
+static const char *scrot_window_cmd[] = { "scrot", "--focused", "/home/$USER/pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png", NULL };
+static const char *scrot_select_cmd[] = { "scrot", "--select", "/home/$USER/pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png", NULL };
 static const char *scrot_clipboard_cmd[] = { "scrot", "-e", "xsel --clipboard --input --mime-type=image/png < $f", NULL };
 static const char *scrot_clipboard_window_cmd[] = { "scrot", "--focused", "-e", "xsel --clipboard --input --mime-type=image/png < $f", NULL };
 static const char *scrot_clipboard_select_cmd[] = { "scrot", "--select", "-e", "xsel --clipboard --input --mime-type=image/png < $f", NULL };
