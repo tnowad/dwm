@@ -67,9 +67,9 @@ static const char *roficmd[]  = { "rofi", "-show", "drun", NULL };
 static const char *scrot_cmd[] = { "sh", "-c", "scrot /home/$USER/pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png", NULL };
 static const char *scrot_window_cmd[] = { "scrot", "--focused", "/home/$USER/pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png", NULL };
 static const char *scrot_select_cmd[] = { "scrot", "--select", "/home/$USER/pictures/screenshot-$(date +'%Y%m%d-%H%M%S').png", NULL };
-static const char *scrot_clipboard_cmd[] = { "scrot", "-e", "xsel --clipboard --input --mime-type=image/png < $f", NULL };
-static const char *scrot_clipboard_window_cmd[] = { "scrot", "--focused", "-e", "xsel --clipboard --input --mime-type=image/png < $f", NULL };
-static const char *scrot_clipboard_select_cmd[] = { "scrot", "--select", "-e", "xsel --clipboard --input --mime-type=image/png < $f", NULL };
+static const char *scrot_clipboard_cmd[] = { "scrot", "-e", "xclip -selection clipboard -t image/png < $f", NULL };
+static const char *scrot_clipboard_window_cmd[] = { "scrot", "--focused", "-e", "xclip -selection clipboard -t image/png < $f", NULL };
+static const char *scrot_clipboard_select_cmd[] = { "scrot", "--select", "-e", "xclip -selection clipboard -t image/png < $f", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key                       function        argument */
@@ -131,7 +131,7 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {0} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
